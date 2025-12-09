@@ -1,11 +1,11 @@
 {
-  "Version": "0.9.0",
+  "Version": "1.0.0",
   "Anno": 8,
-  "ModID": "ai-colors-ewjax",
+  "ModID": "player-colors-ewjax",
   "Difficulty": "unchanged",
   "GameSetup": {
     "RequiresNewGame": false,
-    "SafeToRemove": true,
+    "SafeToRemove": false,
     "Multiplayer": true,
     "Campaign": true
   },
@@ -30,21 +30,21 @@
     "Taiwanese": "Misc"
   },
   "ModName": {
-    "Chinese": "AI Colors (ewjax)",
-    "English": "AI Colors (ewjax)",
-    "French": "AI Colors (ewjax)",
-    "German": "AI Colors (ewjax)",
-    "Italian": "AI Colors (ewjax)",
-    "Japanese": "AI Colors (ewjax)",
-    "Korean": "AI Colors (ewjax)",
-    "Polish": "AI Colors (ewjax)",
-    "Russian": "AI Colors (ewjax)",
-    "Spanish": "AI Colors (ewjax)",
-    "Taiwanese": "AI Colors (ewjax)"
+    "Chinese": "Player Colors (ewjax)",
+    "English": "Player Colors (ewjax)",
+    "French": "Player Colors (ewjax)",
+    "German": "Player Colors (ewjax)",
+    "Italian": "Player Colors (ewjax)",
+    "Japanese": "Player Colors (ewjax)",
+    "Korean": "Player Colors (ewjax)",
+    "Polish": "Player Colors (ewjax)",
+    "Russian": "Player Colors (ewjax)",
+    "Spanish": "Player Colors (ewjax)",
+    "Taiwanese": "Player Colors (ewjax)"
   },
   "Description": {
     "Chinese": null,
-    "English": "#  AI Colors \n\n This mod allows modification of AI banner colors",
+    "English": "#  Player Colors \n\n This mod allows creation of additional Player banner colors",
     "French": null,
     "German": null,
     "Italian": null,
