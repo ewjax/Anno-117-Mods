@@ -1,7 +1,7 @@
 {
   "Version": "1.0.0",
   "Anno": 8,
-  "ModID": "player-colors-ewjax",
+  "ModID": "custom-player-colors-ewjax",
   "Difficulty": "unchanged",
   "GameSetup": {
     "RequiresNewGame": false,
@@ -30,21 +30,21 @@
     "Taiwanese": "Misc"
   },
   "ModName": {
-    "Chinese": "Player Colors (ewjax)",
-    "English": "Player Colors (ewjax)",
-    "French": "Player Colors (ewjax)",
-    "German": "Player Colors (ewjax)",
-    "Italian": "Player Colors (ewjax)",
-    "Japanese": "Player Colors (ewjax)",
-    "Korean": "Player Colors (ewjax)",
-    "Polish": "Player Colors (ewjax)",
-    "Russian": "Player Colors (ewjax)",
-    "Spanish": "Player Colors (ewjax)",
-    "Taiwanese": "Player Colors (ewjax)"
+    "Chinese": "Custom Player Colors (ewjax)",
+    "English": "Custom Player Colors (ewjax)",
+    "French": "Custom Player Colors (ewjax)",
+    "German": "Custom Player Colors (ewjax)",
+    "Italian": "Custom Player Colors (ewjax)",
+    "Japanese": "Custom Player Colors (ewjax)",
+    "Korean": "Custom Player Colors (ewjax)",
+    "Polish": "Custom Player Colors (ewjax)",
+    "Russian": "Custom Player Colors (ewjax)",
+    "Spanish": "Custom Player Colors (ewjax)",
+    "Taiwanese": "Custom Player Colors (ewjax)"
   },
   "Description": {
     "Chinese": null,
-    "English": "#  Player Colors \n\n This mod allows creation of additional Player banner colors",
+    "English": "#  Custom Player Colors \n\n This mod allows creation of additional Player banner colors",
     "French": null,
     "German": null,
     "Italian": null,
