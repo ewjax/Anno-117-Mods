@@ -761,6 +761,151 @@
 
     </ModOp>
 
+    <!-- START: ============== set up new NPC colors for Diana, Valeria, Procruator, Manx============== -->
+    <!-- Custom color Diana -->
+	<Asset>
+		<Template>ParticipantColor</Template>
+		<Values>
+			<Standard>
+				<GUID>2000101100</GUID>
+				<Name>Custom Diana Colour</Name>
+			</Standard>
+			<ParticipantColor>
+				<ParticipantUIColor>
+					<Deuteranopia>-7829368</Deuteranopia>
+					<Protanopia>-7829368</Protanopia>
+					<Tritanopia>-7829368</Tritanopia>
+					<None>-7829368</None>
+				</ParticipantUIColor>
+				<ParticipantInGameColor>
+					<Deuteranopia>-3175270</Deuteranopia>
+					<Protanopia>-3175270</Protanopia>
+					<Tritanopia>-3175270</Tritanopia>
+					<None>-3175270</None>
+				</ParticipantInGameColor>
+			</ParticipantColor>
+			<Locked>
+				<DefaultLockedState>0</DefaultLockedState>
+				<Scope>Account</Scope>
+				<VisibleWhenLocked>1</VisibleWhenLocked>
+			</Locked>
+			<Text />
+		</Values>
+	</Asset>
+	<ModOp Merge="@2000101100/ParticipantColor/*/*">
+		<ModValue Insert="$diana_colour" />
+	</ModOp>
+	<ModOp Merge="@32777/Participant/DefaultColor">2000101100</ModOp>
+
+    <!-- Custom color Valeria -->
+	<Asset>
+		<Template>ParticipantColor</Template>
+		<Values>
+			<Standard>
+				<GUID>2000101101</GUID>
+				<Name>Custom Valeria Colour</Name>
+			</Standard>
+			<ParticipantColor>
+				<ParticipantUIColor>
+					<Deuteranopia>-7829368</Deuteranopia>
+					<Protanopia>-7829368</Protanopia>
+					<Tritanopia>-7829368</Tritanopia>
+					<None>-7829368</None>
+				</ParticipantUIColor>
+				<ParticipantInGameColor>
+					<Deuteranopia>-16680593</Deuteranopia>
+					<Protanopia>-16680593</Protanopia>
+					<Tritanopia>-16680593</Tritanopia>
+					<None>-16680593</None>
+				</ParticipantInGameColor>
+			</ParticipantColor>
+			<Locked>
+				<DefaultLockedState>0</DefaultLockedState>
+				<Scope>Account</Scope>
+				<VisibleWhenLocked>1</VisibleWhenLocked>
+			</Locked>
+			<Text />
+		</Values>
+	</Asset>
+	<ModOp Merge="@2000101101/ParticipantColor/*/*">
+		<ModValue Insert="$valeria_colour" />
+	</ModOp>
+	<ModOp Merge="@32778/Participant/DefaultColor">2000101101</ModOp>
+
+    <!-- Custom color Procurator Corvinus -->
+	<Asset>
+		<Template>ParticipantColor</Template>
+		<Values>
+			<Standard>
+				<GUID>2000101102</GUID>
+				<Name>Custom Procurator Corvinus Colour</Name>
+			</Standard>
+			<ParticipantColor>
+				<ParticipantUIColor>
+					<Deuteranopia>-7829368</Deuteranopia>
+					<Protanopia>-7829368</Protanopia>
+					<Tritanopia>-7829368</Tritanopia>
+					<None>-7829368</None>
+				</ParticipantUIColor>
+				<ParticipantInGameColor>
+					<Deuteranopia>-9226698</Deuteranopia>
+					<Protanopia>-9226698</Protanopia>
+					<Tritanopia>-9226698</Tritanopia>
+					<None>-9226698</None>
+				</ParticipantInGameColor>
+			</ParticipantColor>
+			<Locked>
+				<DefaultLockedState>0</DefaultLockedState>
+				<Scope>Account</Scope>
+				<VisibleWhenLocked>1</VisibleWhenLocked>
+			</Locked>
+			<Text />
+		</Values>
+	</Asset>
+	<ModOp Merge="@2000101102/ParticipantColor/*/*">
+		<ModValue Insert="$procurator_colour" />
+	</ModOp>
+	<ModOp Merge="@27124/Participant/DefaultColor">2000101102</ModOp>
+
+    <!-- Custom color Manx -->
+	<Asset>
+		<Template>ParticipantColor</Template>
+		<Values>
+			<Standard>
+				<GUID>2000101103</GUID>
+				<Name>Custom Manx Colour</Name>
+			</Standard>
+			<ParticipantColor>
+				<ParticipantUIColor>
+					<Deuteranopia>-7829368</Deuteranopia>
+					<Protanopia>-7829368</Protanopia>
+					<Tritanopia>-7829368</Tritanopia>
+					<None>-7829368</None>
+				</ParticipantUIColor>
+				<ParticipantInGameColor>
+					<Deuteranopia>-6773144</Deuteranopia>
+					<Protanopia>-6773144</Protanopia>
+					<Tritanopia>-6773144</Tritanopia>
+					<None>-6773144</None>
+				</ParticipantInGameColor>
+			</ParticipantColor>
+			<Locked>
+				<DefaultLockedState>0</DefaultLockedState>
+				<Scope>Account</Scope>
+				<VisibleWhenLocked>1</VisibleWhenLocked>
+			</Locked>
+			<Text />
+		</Values>
+	</Asset>
+	<ModOp Merge="@2000101103/ParticipantColor/*/*">
+		<ModValue Insert="$manx_colour" />
+	</ModOp>
+	<ModOp Merge="@27079/Participant/DefaultColor">2000101103</ModOp>
+
+    <!-- END: ============== set up new NPC colors for Diana, Valeria, Procruator, Manx============== -->
+
+
+
     <!-- START: ============================ Register custom colors ========================= -->
     <ModOp Type="add" GUID="2002447"
         Path="/Values/ParticipantRepresentationFeature/ParticipantColors">
@@ -835,6 +980,21 @@
         <Item>
             <Color>2000101062</Color>
         </Item>
+
+        <!-- ========================== custom NPC colors ===================== -->
+        <Item>
+            <Color>2000101100</Color>
+        </Item>
+        <Item>
+            <Color>2000101101</Color>
+        </Item>
+        <Item>
+            <Color>2000101102</Color>
+        </Item>
+        <Item>
+            <Color>2000101103</Color>
+        </Item>
+
     </ModOp>
     <!-- END: ============================ Register custom colors ========================= -->
 
