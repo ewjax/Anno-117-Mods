@@ -892,9 +892,6 @@
             <Text />
         </Values>
     </Asset>
-    <ModOp Merge="@2000101100/ParticipantColor/*/*">
-        <ModValue Insert="$diana_colour" />
-    </ModOp>
     <ModOp Merge="@32777/Participant/DefaultColor">2000101100</ModOp>
 
     <!-- Custom color Valeria -->
@@ -927,9 +924,6 @@
             <Text />
         </Values>
     </Asset>
-    <ModOp Merge="@2000101101/ParticipantColor/*/*">
-        <ModValue Insert="$valeria_colour" />
-    </ModOp>
     <ModOp Merge="@32778/Participant/DefaultColor">2000101101</ModOp>
 
     <!-- Custom color Procurator Corvinus -->
@@ -962,9 +956,6 @@
             <Text />
         </Values>
     </Asset>
-    <ModOp Merge="@2000101102/ParticipantColor/*/*">
-        <ModValue Insert="$procurator_colour" />
-    </ModOp>
     <ModOp Merge="@27124/Participant/DefaultColor">2000101102</ModOp>
 
     <!-- Custom color Manx -->
@@ -997,9 +988,6 @@
             <Text />
         </Values>
     </Asset>
-    <ModOp Merge="@2000101103/ParticipantColor/*/*">
-        <ModValue Insert="$manx_colour" />
-    </ModOp>
     <ModOp Merge="@27079/Participant/DefaultColor">2000101103</ModOp>
 
     <Asset>
@@ -1031,9 +1019,6 @@
             </Text>
         </Values>
     </Asset>
-    <ModOp Merge="@2000101104/ParticipantColor/*/*">
-        <ModValue Insert="$voada_colour" />
-    </ModOp>
     <ModOp Merge="@37494/Participant/DefaultColor">2000101104</ModOp>
 
     <!-- END: ============== set up new NPC colors for Diana, Valeria, Procruator, Manx============== -->
