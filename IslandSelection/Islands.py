@@ -41,7 +41,7 @@ class LatiumIsland:
                  mountain_slots: int = 0,
                  island_size: IslandSize = IslandSize.LARGE
                  ):
-        self.island_name = island_name,
+        self.island_name = island_name
         self.fertilities = fert_values
         self.river_slots = river_slots
         self.mountain_slots = mountain_slots
@@ -196,24 +196,18 @@ def main():
     print(f"{LatiumFertility.__members__}")
 
     name = 'sample island'
-    print(f"name = [{name}]")
-    li2 = LatiumIsland(name)
+    li = LatiumIsland(name)
+    li.add_fertility(LatiumFertility.MACKEREL)
+    li.add_fertility(LatiumFertility.LAVENDAR | LatiumFertility.RESIN)
+    print(f"name = [{li.island_name}]")
+    print(f"Island has resin?   [{li.has_fertility(LatiumFertility.RESIN)}]")
+    print(f"Island has gold?    [{li.has_fertility(LatiumFertility.GOLD_ORE)}]")
+    print(f"Island score: [{li.island_name}], [{li.calculate_score()}]")
+    # li.dump()
+
+    li2 = LatiumIsland("island two", LatiumFertility.MACKEREL | LatiumFertility.OLIVE | LatiumFertility.MARBLE, 12, 8)
+    print(f"Island score: [{li2.island_name}], [{li2.calculate_score()}]")
     # li2.dump()
-
-    # todo - why did the name string get changed into an array of strings
-    print(f"name = [{li2.island_name}]")
-    print(f"name = [{li2.island_name[0]}]")     # why did the name string become an array of strings???
-
-    li2.add_fertility(LatiumFertility.MACKEREL)
-    li2.add_fertility(LatiumFertility.LAVENDAR | LatiumFertility.RESIN)
-    print(f"Island has resin?   [{li2.has_fertility(LatiumFertility.RESIN)}]")
-    print(f"Island has gold?    [{li2.has_fertility(LatiumFertility.GOLD_ORE)}]")
-    print(f"Island score: [{li2.island_name[0]}], [{li2.calculate_score()}]")
-    # li2.dump()
-
-    li3 = LatiumIsland("island two", LatiumFertility.MACKEREL | LatiumFertility.OLIVE | LatiumFertility.MARBLE, 12, 8)
-    print(f"Island score: [{li3.island_name}], [{li3.calculate_score()}]")
-    # li3.dump()
 
     li_max = LatiumIsland('all fertilities')
     for fert in LatiumFertility:
