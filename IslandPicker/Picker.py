@@ -3,48 +3,53 @@ import math
 import numpy
 
 
-
-class SimulatedAnnealingSolver:
+#
+###########################################################################################
+#
+class SimulatedAnnealing_Base:
     """
     Base class for Simulated Annealing Solver derived classes
     child classes should
-        - define the array to be solved
+        - define the array to be sorted
         - specify the score() virtual function for a particular sequence of list members
-        - the solver optimizer logic finds high scores, i.e. maximums
+        - note that this solver logic finds high scores, i.e. maximums
     """
 
     def __init__(self):
         # the list of items to be sorted
         self.the_list = []
 
+        # simulated annealing solver tuning parameters
+        self.max_anneals = 200      # black art = set as approx log(.01/Temperature)/(log(coolingrate))
+        self.max_trials = 1000      # max trials per annealing temperature
+        self.temperature = 500.0    # black art = pick this to be ~150% of a typical score change
+        self.cooling_rate = 0.95    # a slower rate allows solution to better avoid local maxima to find a true maxima
+
     def score(self, candidate_list: []) -> float:
+        """
+        function to define the value or score of this particular list arrangement
+        """
         raise NotImplementedError()
-        # rv = candidate_list[0] + 0.8 * candidate_list[1] + 0.6 * candidate_list[2]
-        # return rv
 
     def solve(self) -> []:
         """
         Simulated Annealing basic algorithm
             - start with initial random solution, and a high initial temperature T
-            -   outer loop
-            -       inner loop
+            -   anneal_counter loop
+            -       trial_counter loop
             -           determine a neighboring, perturbed solution
             -           determine difference in "cost", DeltaE
             -           if new solution is better, accept it
             -           if new solution is worse, accept it based on probability P = exp(-DeltaE/T)
             -       cool the temperature according to a schedule, T_new = cooling_rate * T_old
-        :return:
+        :return: optimized list
         """
-        outerloop_limit = 100
-        innerloop_limit = 1000
-        temperature = 100.0
-        cooling_rate = 0.95
         current_score = self.score(self.the_list)
 
-        for outer in range(outerloop_limit):
+        for anneal_counter in range(self.max_anneals):
 
-            # print(f"Outer loop: [{outer}] Temperature: [{temperature}]------------------------------------")
-            for inner in range(innerloop_limit):
+            # print(f"Outer loop: [{anneal_counter}] Temperature: [{self.temperature}]------------------------------------")
+            for trial_counter in range(self.max_trials):
                 perturbed_list = self.perturb_list(self.the_list.copy())
                 perturbed_score = self.score(perturbed_list)
 
@@ -57,20 +62,21 @@ class SimulatedAnnealingSolver:
                 elif perturbed_score < current_score:
                     # this will be a negative delta
                     delta_score = perturbed_score - current_score
-                    prob_acceptance = math.exp(delta_score / temperature)
+                    prob_acceptance = math.exp(delta_score / self.temperature)
                     # print(f"prob: [{prob_acceptance}]")
                     if numpy.random.rand() < prob_acceptance:
                         accept = True
 
                 # if perturbed_score is unchanged, do not accept the change
 
+                # if accepted...
                 if accept:
                     self.the_list = perturbed_list
                     current_score = perturbed_score
                     # print(f"New score: [{current_score}]")
 
-            # cool off the annealing
-            temperature *= cooling_rate
+            # cool off the annealing process
+            self.temperature *= self.cooling_rate
 
         return self.the_list
 
@@ -117,26 +123,51 @@ class SimulatedAnnealingSolver:
 
         return the_list
 
-class SimpleArray_SimulatedAnnealingSolver(SimulatedAnnealingSolver):
+#
+###########################################################################################
+#
+class SimpleArraySorter(SimulatedAnnealing_Base):
     def __init__(self):
         # call parent ctor
         super().__init__()
 
         # set up a basic array of numbers
+        # [0, 10, 20, ... 230, 240]
         for i in range(25):
             self.the_list.append(10 * i)
 
     # define the virtual score() function
     # this one simply defines the score as a weighted sum of the first 3 list values
+    # the perfect sorted order be [240, 230, 220, ...the rest doesn't matter]
     def score(self, candidate_list: []) -> float:
-        rv = candidate_list[0] + 0.8 * candidate_list[1] + 0.6 * candidate_list[2]
+        rv = candidate_list[0] + 0.9 * candidate_list[1] + 0.8 * candidate_list[2]
+        return rv
+
+#
+###########################################################################################
+#
+class LatiumIslandSorter(SimulatedAnnealing_Base):
+    def __init__(self):
+        # call parent ctor
+        super().__init__()
+
+        # set up a basic array of islands
+
+    # define the virtual score() function
+    def score(self, candidate_list: []) -> float:
+        rv = 0.0
+
+
         return rv
 
 
 
+#
+###########################################################################################
+#
 def main():
 
-    simple_solver = SimpleArray_SimulatedAnnealingSolver()
+    simple_solver = SimpleArraySorter()
     my_list = simple_solver.the_list
     print(f"Initial List   [{len(my_list)}]    : {my_list}")
 
