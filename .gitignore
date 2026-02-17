@@ -1,3 +1,4 @@
+
 .vs/
 
 # Executables
@@ -14,6 +15,7 @@
 # working directories
 working/
 .modcache/
+__pycache__/
 
 # PyCharm
 .idea/
